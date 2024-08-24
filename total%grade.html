@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <style>
+            #d1{
+                height: 300px;
+                width: 200px;
+                border: solid,black;
+                background-color: rgb(8, 221, 221)
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <table border="1" cellspacing="5">
+            <tr>
+                <th>English</th>
+                <td><input type="text" id="m1"></td>
+            </tr>
+            <tr>
+                <th>Maths</th>
+                <td><input type="text" id="m2"></td>
+            </tr>
+            <tr>
+                <th>Science</th>
+                <td><input type="text" id="m3"></td>
+            </tr>
+            <tr>
+                <th>Chemistry</th>
+                <td><input type="text" id="m4"></td>
+            </tr>
+            <tr>
+                <th>Physics</th>
+                <td><input type="text" id="m5"></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td><input type="text" id="total"></td>
+            </tr> <tr>
+                <th>Percentage</th>
+                <td><input type="text" id="per"></td>
+            </tr>
+        </table><br>
+            <tr>
+                <th><input type="button" value="Total" onclick="total1()"></th>
+                <th><input type="button" value="Percentage" onclick="percentage1()"></th>
+                <th><input type="button" value="Grade" onclick="grade1()"></th>
+            </tr>
+        
+        <div style="height: 100px; width: 400px;" id="area"></div>
+        <div id="d1">
+            
+
+        </div>
+    </body>
+    <script>
+        var a,b,c,d,e,sum,per;
+        function total1(){
+            a=parseInt(document.getElementById("m1").value);
+            b=parseInt(document.getElementById("m2").value);
+            c=parseInt(document.getElementById("m3").value);
+            d=parseInt(document.getElementById("m4").value);
+            e=parseInt(document.getElementById("m5").value);
+            sum=a+b+c+d+e;
+            document.getElementById("total").value=sum;
+        }
+        function percentage1(){
+            per=sum/5;
+            document.getElementById("per").value=per;
+        }
+        function grade1(){
+            if(a<35 || b<35 || c<35 || d<35 || e<35 ){
+                document.getElementById("area").innerHTML="You are Fail";
+
+            }else{
+                if (per>=75){
+                    document.getElementById("area").innerHTML="You got a Distinction";
+                
+                }else if(per>=65){
+                    document.getElementById("area").innerHTML="You got a First Class";
+                }else if(per>=45){
+                    document.getElementById("area").innerHTML="You got a Second Class";
+                }else if(per==35){
+                    document.getElementById("area").innerHTML="You are Pass";
+                }
+            }
+        }
+    </script>
+</html>
